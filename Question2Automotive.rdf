@@ -1,0 +1,485 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rdf:RDF 
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+xmlns:owl="http://www.w3.org/2002/07/owl#" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#" 
+xmlns:auto="http://www.example.org/automotive#">
+  
+
+  <!-- ONTOLOGY DECLARATION -->
+  <owl:Ontology rdf:about="http://www.example.org/automotive#AutomotiveOntology">
+    <rdfs:label>Automotive Ontology</rdfs:label>
+  </owl:Ontology>
+
+  <!-- TOP LEVEL CLASSES -->
+  <owl:Class rdf:about="http://www.example.org/automotive#VehicleComponentClassification">
+    <rdfs:label>VehicleComponentClassification</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.org/automotive#ManufacturingProcessManagement">
+    <rdfs:label>ManufacturingProcessManagement</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.org/automotive#QualityAssuranceAndTesting">
+    <rdfs:label>QualityAssuranceAndTesting</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.org/automotive#ComplianceAndRegulations">
+    <rdfs:label>ComplianceAndRegulations</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.org/automotive#SecurityControlsAndMaintenancePolicies">
+    <rdfs:label>SecurityControlsAndMaintenancePolicies</rdfs:label>
+  </owl:Class>
+
+  <!-- VEHICLE SUBCLASSES -->
+  <owl:Class rdf:about="http://www.example.org/automotive#PowertrainComponent">
+    <rdfs:subClassOf rdf:resource="http://www.example.org/automotive#VehicleComponentClassification"/>
+    <rdfs:label>PowertrainComponent</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.org/automotive#ChassisSafetyComponent">
+    <rdfs:subClassOf rdf:resource="http://www.example.org/automotive#VehicleComponentClassification"/>
+    <rdfs:label>ChassisSafetyComponent</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.org/automotive#ElectricalElectronicComponent">
+    <rdfs:subClassOf rdf:resource="http://www.example.org/automotive#VehicleComponentClassification"/>
+    <rdfs:label>ElectricalElectronicComponent</rdfs:label>
+  </owl:Class>
+
+  <!-- MANUFACTURING SUBCLASSES -->
+  <owl:Class rdf:about="http://www.example.org/automotive#BodyManufacturingProcess">
+    <rdfs:subClassOf rdf:resource="http://www.example.org/automotive#ManufacturingProcessManagement"/>
+    <rdfs:label>BodyManufacturingProcess</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.org/automotive#CoatingAndAssemblyProcess">
+    <rdfs:subClassOf rdf:resource="http://www.example.org/automotive#ManufacturingProcessManagement"/>
+    <rdfs:label>CoatingAndAssemblyProcess</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.org/automotive#InspectionProcess">
+    <rdfs:subClassOf rdf:resource="http://www.example.org/automotive#ManufacturingProcessManagement"/>
+    <rdfs:label>InspectionProcess</rdfs:label>
+  </owl:Class>
+
+  <!-- QUALITY SUBCLASSES -->
+  <owl:Class rdf:about="http://www.example.org/automotive#QualityCoreTool">
+    <rdfs:subClassOf rdf:resource="http://www.example.org/automotive#QualityAssuranceAndTesting"/>
+    <rdfs:label>QualityCoreTool</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.org/automotive#TestingAndValidationMethod">
+    <rdfs:subClassOf rdf:resource="http://www.example.org/automotive#QualityAssuranceAndTesting"/>
+    <rdfs:label>TestingAndValidationMethod</rdfs:label>
+  </owl:Class>
+
+  <!-- COMPLIANCE SUBCLASSES -->
+  <owl:Class rdf:about="http://www.example.org/automotive#AutomotiveStandardOrRegulation">
+    <rdfs:subClassOf rdf:resource="http://www.example.org/automotive#ComplianceAndRegulations"/>
+    <rdfs:label>AutomotiveStandardOrRegulation</rdfs:label>
+  </owl:Class>
+
+  <!-- SECURITY AND MAINTENANCE SUBCLASSES -->
+  <owl:Class rdf:about="http://www.example.org/automotive#MaintenancePolicy">
+    <rdfs:subClassOf rdf:resource="http://www.example.org/automotive#SecurityControlsAndMaintenancePolicies"/>
+    <rdfs:label>MaintenancePolicy</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.org/automotive#SecurityControlPolicy">
+    <rdfs:subClassOf rdf:resource="http://www.example.org/automotive#SecurityControlsAndMaintenancePolicies"/>
+    <rdfs:label>SecurityControlPolicy</rdfs:label>
+  </owl:Class>
+
+  <!-- OBJECT PROPERTIES -->
+  <owl:ObjectProperty rdf:about="http://www.example.org/automotive#hasBranch">
+    <rdfs:label>hasBranch</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.example.org/automotive#manufacturedBy">
+    <rdfs:domain rdf:resource="http://www.example.org/automotive#VehicleComponentClassification"/>
+    <rdfs:range rdf:resource="http://www.example.org/automotive#ManufacturingProcessManagement"/>
+    <rdfs:label>manufacturedBy</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.example.org/automotive#validatedBy">
+    <rdfs:domain rdf:resource="http://www.example.org/automotive#VehicleComponentClassification"/>
+    <rdfs:range rdf:resource="http://www.example.org/automotive#QualityAssuranceAndTesting"/>
+    <rdfs:label>validatedBy</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.example.org/automotive#compliesWith">
+    <rdfs:domain rdf:resource="http://www.example.org/automotive#VehicleComponentClassification"/>
+    <rdfs:range rdf:resource="http://www.example.org/automotive#ComplianceAndRegulations"/>
+    <rdfs:label>compliesWith</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.example.org/automotive#maintainedBy">
+    <rdfs:domain rdf:resource="http://www.example.org/automotive#VehicleComponentClassification"/>
+    <rdfs:range rdf:resource="http://www.example.org/automotive#SecurityControlsAndMaintenancePolicies"/>
+    <rdfs:label>maintainedBy</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.example.org/automotive#protectedBy">
+    <rdfs:domain rdf:resource="http://www.example.org/automotive#ElectricalElectronicComponent"/>
+    <rdfs:range rdf:resource="http://www.example.org/automotive#SecurityControlPolicy"/>
+    <rdfs:label>protectedBy</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.example.org/automotive#checkedBy">
+    <rdfs:domain rdf:resource="http://www.example.org/automotive#BodyManufacturingProcess"/>
+    <rdfs:range rdf:resource="http://www.example.org/automotive#InspectionProcess"/>
+    <rdfs:label>checkedBy</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.example.org/automotive#supportsComplianceWith">
+    <rdfs:domain rdf:resource="http://www.example.org/automotive#TestingAndValidationMethod"/>
+    <rdfs:range rdf:resource="http://www.example.org/automotive#AutomotiveStandardOrRegulation"/>
+    <rdfs:label>supportsComplianceWith</rdfs:label>
+  </owl:ObjectProperty>
+
+  <!-- INDIVIDUALS: VEHICLE COMPONENTS -->
+  <rdf:Description rdf:about="http://www.example.org/automotive#PetrolEngine">
+    <rdf:type rdf:resource="http://www.example.org/automotive#PowertrainComponent"/>
+    <rdfs:label>PetrolEngine</rdfs:label>
+    <auto:manufacturedBy rdf:resource="http://www.example.org/automotive#FinalAssemblyLine"/>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#ProductionPPAP"/>
+    <auto:compliesWith rdf:resource="http://www.example.org/automotive#IATF16949Standard"/>
+    <auto:maintainedBy rdf:resource="http://www.example.org/automotive#OilChangeSchedule"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#DieselEngine">
+    <rdf:type rdf:resource="http://www.example.org/automotive#PowertrainComponent"/>
+    <rdfs:label>DieselEngine</rdfs:label>
+    <auto:manufacturedBy rdf:resource="http://www.example.org/automotive#FinalAssemblyLine"/>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#ProductionPPAP"/>
+    <auto:compliesWith rdf:resource="http://www.example.org/automotive#IATF16949Standard"/>
+    <auto:maintainedBy rdf:resource="http://www.example.org/automotive#OilChangeSchedule"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#FuelInjector">
+    <rdf:type rdf:resource="http://www.example.org/automotive#PowertrainComponent"/>
+    <rdfs:label>FuelInjector</rdfs:label>
+    <auto:manufacturedBy rdf:resource="http://www.example.org/automotive#LaserCutting"/>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#APQPPlan"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#ManualTransmission">
+    <rdf:type rdf:resource="http://www.example.org/automotive#PowertrainComponent"/>
+    <rdfs:label>ManualTransmission</rdfs:label>
+    <auto:manufacturedBy rdf:resource="http://www.example.org/automotive#FinalAssemblyLine"/>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#DurabilityTest"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#Radiator">
+    <rdf:type rdf:resource="http://www.example.org/automotive#PowertrainComponent"/>
+    <rdfs:label>Radiator</rdfs:label>
+    <auto:manufacturedBy rdf:resource="http://www.example.org/automotive#FinalAssemblyLine"/>
+    <auto:maintainedBy rdf:resource="http://www.example.org/automotive#CoolantReplacementSchedule"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#DiscBrake">
+    <rdf:type rdf:resource="http://www.example.org/automotive#ChassisSafetyComponent"/>
+    <rdfs:label>DiscBrake</rdfs:label>
+    <auto:manufacturedBy rdf:resource="http://www.example.org/automotive#RoboticBodyWelding"/>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#BrakePerformanceTest"/>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#BrakeSystemFMEA"/>
+    <auto:compliesWith rdf:resource="http://www.example.org/automotive#FMVSS135"/>
+    <auto:maintainedBy rdf:resource="http://www.example.org/automotive#BrakePadReplacementSchedule"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#ABSModule">
+    <rdf:type rdf:resource="http://www.example.org/automotive#ChassisSafetyComponent"/>
+    <rdfs:label>ABSModule</rdfs:label>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#BrakePerformanceTest"/>
+    <auto:compliesWith rdf:resource="http://www.example.org/automotive#FMVSS135"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#SteeringRack">
+    <rdf:type rdf:resource="http://www.example.org/automotive#ChassisSafetyComponent"/>
+    <rdfs:label>SteeringRack</rdfs:label>
+    <auto:manufacturedBy rdf:resource="http://www.example.org/automotive#SpotWelding"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#CoilSpringSuspension">
+    <rdf:type rdf:resource="http://www.example.org/automotive#ChassisSafetyComponent"/>
+    <rdfs:label>CoilSpringSuspension</rdfs:label>
+    <auto:manufacturedBy rdf:resource="http://www.example.org/automotive#SpotWelding"/>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#DurabilityTest"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#ShockAbsorber">
+    <rdf:type rdf:resource="http://www.example.org/automotive#ChassisSafetyComponent"/>
+    <rdfs:label>ShockAbsorber</rdfs:label>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#DurabilityTest"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#EngineControlUnit">
+    <rdf:type rdf:resource="http://www.example.org/automotive#ElectricalElectronicComponent"/>
+    <rdfs:label>EngineControlUnit</rdfs:label>
+    <auto:manufacturedBy rdf:resource="http://www.example.org/automotive#FinalAssemblyLine"/>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#ElectricalSystemTest"/>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#APQPPlan"/>
+    <auto:compliesWith rdf:resource="http://www.example.org/automotive#ISO26262Standard"/>
+    <auto:compliesWith rdf:resource="http://www.example.org/automotive#UNR155Cybersecurity"/>
+    <auto:protectedBy rdf:resource="http://www.example.org/automotive#ECUAccessControlPolicy"/>
+    <auto:protectedBy rdf:resource="http://www.example.org/automotive#SecureSoftwareUpdatePolicy"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#BatteryManagementSystem">
+    <rdf:type rdf:resource="http://www.example.org/automotive#ElectricalElectronicComponent"/>
+    <rdfs:label>BatteryManagementSystem</rdfs:label>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#ElectricalSystemTest"/>
+    <auto:compliesWith rdf:resource="http://www.example.org/automotive#ISO26262Standard"/>
+    <auto:maintainedBy rdf:resource="http://www.example.org/automotive#BatteryHealthMonitoring"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#WheelSpeedSensor">
+    <rdf:type rdf:resource="http://www.example.org/automotive#ElectricalElectronicComponent"/>
+    <rdfs:label>WheelSpeedSensor</rdfs:label>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#ElectricalSystemTest"/>
+    <auto:protectedBy rdf:resource="http://www.example.org/automotive#ThreatMonitoringPolicy"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#InfotainmentHeadUnit">
+    <rdf:type rdf:resource="http://www.example.org/automotive#ElectricalElectronicComponent"/>
+    <rdfs:label>InfotainmentHeadUnit</rdfs:label>
+    <auto:protectedBy rdf:resource="http://www.example.org/automotive#VulnerabilityAssessmentPolicy"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#HeadlampControlModule">
+    <rdf:type rdf:resource="http://www.example.org/automotive#ElectricalElectronicComponent"/>
+    <rdfs:label>HeadlampControlModule</rdfs:label>
+    <auto:compliesWith rdf:resource="http://www.example.org/automotive#FMVSS208"/>
+  </rdf:Description>
+
+  <!-- INDIVIDUALS: MANUFACTURING -->
+  <rdf:Description rdf:about="http://www.example.org/automotive#SheetMetalStamping">
+    <rdf:type rdf:resource="http://www.example.org/automotive#BodyManufacturingProcess"/>
+    <rdfs:label>SheetMetalStamping</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#DeepDrawing">
+    <rdf:type rdf:resource="http://www.example.org/automotive#BodyManufacturingProcess"/>
+    <rdfs:label>DeepDrawing</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#LaserCutting">
+    <rdf:type rdf:resource="http://www.example.org/automotive#BodyManufacturingProcess"/>
+    <rdfs:label>LaserCutting</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#SpotWelding">
+    <rdf:type rdf:resource="http://www.example.org/automotive#BodyManufacturingProcess"/>
+    <rdfs:label>SpotWelding</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#RoboticBodyWelding">
+    <rdf:type rdf:resource="http://www.example.org/automotive#BodyManufacturingProcess"/>
+    <rdfs:label>RoboticBodyWelding</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#PrimerCoating">
+    <rdf:type rdf:resource="http://www.example.org/automotive#CoatingAndAssemblyProcess"/>
+    <rdfs:label>PrimerCoating</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#ElectrocoatPainting">
+    <rdf:type rdf:resource="http://www.example.org/automotive#CoatingAndAssemblyProcess"/>
+    <rdfs:label>ElectrocoatPainting</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#BaseCoatApplication">
+    <rdf:type rdf:resource="http://www.example.org/automotive#CoatingAndAssemblyProcess"/>
+    <rdfs:label>BaseCoatApplication</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#ClearCoatCuring">
+    <rdf:type rdf:resource="http://www.example.org/automotive#CoatingAndAssemblyProcess"/>
+    <rdfs:label>ClearCoatCuring</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#FinalAssemblyLine">
+    <rdf:type rdf:resource="http://www.example.org/automotive#CoatingAndAssemblyProcess"/>
+    <rdfs:label>FinalAssemblyLine</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#VisualInspection">
+    <rdf:type rdf:resource="http://www.example.org/automotive#InspectionProcess"/>
+    <rdfs:label>VisualInspection</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#DimensionalInspection">
+    <rdf:type rdf:resource="http://www.example.org/automotive#InspectionProcess"/>
+    <rdfs:label>DimensionalInspection</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#WeldIntegrityInspection">
+    <rdf:type rdf:resource="http://www.example.org/automotive#InspectionProcess"/>
+    <rdfs:label>WeldIntegrityInspection</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#PaintThicknessInspection">
+    <rdf:type rdf:resource="http://www.example.org/automotive#InspectionProcess"/>
+    <rdfs:label>PaintThicknessInspection</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#EndOfLineFunctionalInspection">
+    <rdf:type rdf:resource="http://www.example.org/automotive#InspectionProcess"/>
+    <rdfs:label>EndOfLineFunctionalInspection</rdfs:label>
+  </rdf:Description>
+
+  <!-- INDIVIDUALS: QUALITY -->
+  <rdf:Description rdf:about="http://www.example.org/automotive#APQPPlan">
+    <rdf:type rdf:resource="http://www.example.org/automotive#QualityCoreTool"/>
+    <rdfs:label>APQPPlan</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#ProductionPPAP">
+    <rdf:type rdf:resource="http://www.example.org/automotive#QualityCoreTool"/>
+    <rdfs:label>ProductionPPAP</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#BrakeSystemFMEA">
+    <rdf:type rdf:resource="http://www.example.org/automotive#QualityCoreTool"/>
+    <rdfs:label>BrakeSystemFMEA</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#PaintThicknessSPC">
+    <rdf:type rdf:resource="http://www.example.org/automotive#QualityCoreTool"/>
+    <rdfs:label>PaintThicknessSPC</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#GaugeCalibrationMSA">
+    <rdf:type rdf:resource="http://www.example.org/automotive#QualityCoreTool"/>
+    <rdfs:label>GaugeCalibrationMSA</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#BrakePerformanceTest">
+    <rdf:type rdf:resource="http://www.example.org/automotive#TestingAndValidationMethod"/>
+    <rdfs:label>BrakePerformanceTest</rdfs:label>
+    <auto:supportsComplianceWith rdf:resource="http://www.example.org/automotive#FMVSS135"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#ElectricalSystemTest">
+    <rdf:type rdf:resource="http://www.example.org/automotive#TestingAndValidationMethod"/>
+    <rdfs:label>ElectricalSystemTest</rdfs:label>
+    <auto:supportsComplianceWith rdf:resource="http://www.example.org/automotive#ISO26262Standard"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#EmissionsTest">
+    <rdf:type rdf:resource="http://www.example.org/automotive#TestingAndValidationMethod"/>
+    <rdfs:label>EmissionsTest</rdfs:label>
+    <auto:supportsComplianceWith rdf:resource="http://www.example.org/automotive#IATF16949Standard"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#DurabilityTest">
+    <rdf:type rdf:resource="http://www.example.org/automotive#TestingAndValidationMethod"/>
+    <rdfs:label>DurabilityTest</rdfs:label>
+    <auto:supportsComplianceWith rdf:resource="http://www.example.org/automotive#FMVSS208"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#VisualDefectInspection">
+    <rdf:type rdf:resource="http://www.example.org/automotive#TestingAndValidationMethod"/>
+    <rdfs:label>VisualDefectInspection</rdfs:label>
+    <auto:supportsComplianceWith rdf:resource="http://www.example.org/automotive#IATF16949Standard"/>
+  </rdf:Description>
+
+  <!-- INDIVIDUALS: COMPLIANCE -->
+  <rdf:Description rdf:about="http://www.example.org/automotive#IATF16949Standard">
+    <rdf:type rdf:resource="http://www.example.org/automotive#AutomotiveStandardOrRegulation"/>
+    <rdfs:label>IATF16949Standard</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#FMVSS135">
+    <rdf:type rdf:resource="http://www.example.org/automotive#AutomotiveStandardOrRegulation"/>
+    <rdfs:label>FMVSS135</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#FMVSS208">
+    <rdf:type rdf:resource="http://www.example.org/automotive#AutomotiveStandardOrRegulation"/>
+    <rdfs:label>FMVSS208</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#ISO26262Standard">
+    <rdf:type rdf:resource="http://www.example.org/automotive#AutomotiveStandardOrRegulation"/>
+    <rdfs:label>ISO26262Standard</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#UNR155Cybersecurity">
+    <rdf:type rdf:resource="http://www.example.org/automotive#AutomotiveStandardOrRegulation"/>
+    <rdfs:label>UNR155Cybersecurity</rdfs:label>
+  </rdf:Description>
+
+  <!-- INDIVIDUALS: MAINTENANCE AND SECURITY -->
+  <rdf:Description rdf:about="http://www.example.org/automotive#OilChangeSchedule">
+    <rdf:type rdf:resource="http://www.example.org/automotive#MaintenancePolicy"/>
+    <rdfs:label>OilChangeSchedule</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#BrakePadReplacementSchedule">
+    <rdf:type rdf:resource="http://www.example.org/automotive#MaintenancePolicy"/>
+    <rdfs:label>BrakePadReplacementSchedule</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#CoolantReplacementSchedule">
+    <rdf:type rdf:resource="http://www.example.org/automotive#MaintenancePolicy"/>
+    <rdfs:label>CoolantReplacementSchedule</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#TireRotationSchedule">
+    <rdf:type rdf:resource="http://www.example.org/automotive#MaintenancePolicy"/>
+    <rdfs:label>TireRotationSchedule</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#BatteryHealthMonitoring">
+    <rdf:type rdf:resource="http://www.example.org/automotive#MaintenancePolicy"/>
+    <rdfs:label>BatteryHealthMonitoring</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#ECUAccessControlPolicy">
+    <rdf:type rdf:resource="http://www.example.org/automotive#SecurityControlPolicy"/>
+    <rdfs:label>ECUAccessControlPolicy</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#SecureSoftwareUpdatePolicy">
+    <rdf:type rdf:resource="http://www.example.org/automotive#SecurityControlPolicy"/>
+    <rdfs:label>SecureSoftwareUpdatePolicy</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#IncidentResponseProcedure">
+    <rdf:type rdf:resource="http://www.example.org/automotive#SecurityControlPolicy"/>
+    <rdfs:label>IncidentResponseProcedure</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#ThreatMonitoringPolicy">
+    <rdf:type rdf:resource="http://www.example.org/automotive#SecurityControlPolicy"/>
+    <rdfs:label>ThreatMonitoringPolicy</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#VulnerabilityAssessmentPolicy">
+    <rdf:type rdf:resource="http://www.example.org/automotive#SecurityControlPolicy"/>
+    <rdfs:label>VulnerabilityAssessmentPolicy</rdfs:label>
+  </rdf:Description>
+
+  <!-- RELATIONSHIPS -->
+  <rdf:Description rdf:about="http://www.example.org/automotive#AutomotiveOntology">
+    <auto:hasBranch rdf:resource="http://www.example.org/automotive#VehicleComponentClassification"/>
+    <auto:hasBranch rdf:resource="http://www.example.org/automotive#ManufacturingProcessManagement"/>
+    <auto:hasBranch rdf:resource="http://www.example.org/automotive#QualityAssuranceAndTesting"/>
+    <auto:hasBranch rdf:resource="http://www.example.org/automotive#ComplianceAndRegulations"/>
+    <auto:hasBranch rdf:resource="http://www.example.org/automotive#SecurityControlsAndMaintenancePolicies"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#VehicleComponentClassification">
+    <auto:manufacturedBy rdf:resource="http://www.example.org/automotive#ManufacturingProcessManagement"/>
+    <auto:validatedBy rdf:resource="http://www.example.org/automotive#QualityAssuranceAndTesting"/>
+    <auto:compliesWith rdf:resource="http://www.example.org/automotive#ComplianceAndRegulations"/>
+    <auto:maintainedBy rdf:resource="http://www.example.org/automotive#SecurityControlsAndMaintenancePolicies"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#ElectricalElectronicComponent">
+    <auto:protectedBy rdf:resource="http://www.example.org/automotive#SecurityControlPolicy"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#BodyManufacturingProcess">
+    <auto:checkedBy rdf:resource="http://www.example.org/automotive#InspectionProcess"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/automotive#TestingAndValidationMethod">
+    <auto:supportsComplianceWith rdf:resource="http://www.example.org/automotive#AutomotiveStandardOrRegulation"/>
+  </rdf:Description>
+
+</rdf:RDF>
