@@ -1,6 +1,6 @@
 # CM2602 Artificial Intelligence Coursework
 
-This repository contains my individual coursework submission for **CM2602 – Artificial Intelligence**. The project brings together four major areas of AI practice: **Constraint Satisfaction Problems (CSP)**, **Ontology Engineering**, **Search Algorithms**, and **Intelligent Decision Systems**.
+This repository contains my individual coursework submission for **CM2602 – Artificial Intelligence**. The project brings together four major areas of AI practice: **Constraint Satisfaction Problems (CSP)**, **Ontology Engineering**, **Search Algorithms** and **Intelligent Decision Systems**.
 
 The work is organised question by question, with the final coursework report included alongside the implementation files.
 
@@ -68,7 +68,7 @@ This section focuses on **anomaly detection and correction in Automated Manual T
 The system uses AMT sensor features to:
 - detect anomaly severity
 - recommend a corrective action
-- compare performance using inference time, classification quality, and false positive / false negative behaviour
+- compare performance using inference time, classification quality and false positive / false negative behaviour
 
 ## Files Description
 
@@ -82,10 +82,10 @@ RDF/OWL ontology file representing the automotive knowledge model.
 Python implementation of IDDFS and Best First Search with multiple heuristics for maze pathfinding.
 
 ### `Question4.py`
-Python implementation of three AMT anomaly detection approaches: Machine Learning, Fuzzy Logic, and Rule-Based reasoning.
+Python implementation of three AMT anomaly detection approaches: Machine Learning, Fuzzy Logic and Rule-Based reasoning.
 
 ### `2506755_20240281_Nisitha Nimsara.pdf`
-Final coursework report containing explanations, screenshots, outputs, analysis, and conclusions for all questions.
+Final coursework report containing explanations, screenshots, outputs, analysis and conclusions for all questions.
 
 ## How to Run
 
@@ -151,10 +151,4 @@ This repository demonstrates practical work in:
 
 This repository is shared for **learning and portfolio purposes**. Please do not copy, reuse, or submit this work as your own in any academic setting. Use it only as a reference while following your institution’s academic integrity guidelines.
 
-## Author
 
-**W.D. Nisitha Nimsara**
-
----
-
-If you are viewing this repository as part of my academic or portfolio work, the PDF report provides the full explanation of the design decisions, implementation details, results, and discussion for each question.
